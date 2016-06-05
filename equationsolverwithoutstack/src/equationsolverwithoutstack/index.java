@@ -45,7 +45,7 @@ public class index {
         prin(eq_parts);
          //printer
         for(int i =0; i<eq_parts.length;i++){
-            System.out.println(eq_parts[i]);
+            System.out.println(eq_parts[0]);
         }
     }
     public static void prin(String[] c){
