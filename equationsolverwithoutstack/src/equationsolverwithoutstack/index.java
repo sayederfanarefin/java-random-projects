@@ -16,23 +16,45 @@ public class index {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String eq="5/1+3-34x222/222";
+        String eq="8/4+4/2x2-2";
         String eq_parts [] = disector(eq);
+        prin(eq_parts);
+        
         
         symbl_based_solve(eq_parts,'/');
+        prin(eq_parts);
         eq_parts = null_remover(eq_parts);
-       symbl_based_solve(eq_parts,'x');
+        prin(eq_parts);
+        
+        
+        symbl_based_solve(eq_parts,'x');
+        prin(eq_parts);
         eq_parts = null_remover(eq_parts);
+        prin(eq_parts);
+        
+        
         symbl_based_solve(eq_parts,'+');
+        prin(eq_parts);
         eq_parts = null_remover(eq_parts);
+        prin(eq_parts);
+        
+        
         symbl_based_solve(eq_parts,'-');
+        prin(eq_parts);
         eq_parts = null_remover(eq_parts);
+        prin(eq_parts);
          //printer
         for(int i =0; i<eq_parts.length;i++){
             System.out.println(eq_parts[i]);
         }
     }
-    
+    public static void prin(String[] c){
+        for(int i =0; i <c.length;i++){
+            System.out.print(c[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
     public static String[] null_remover(String[] the_eq_parts){
         int null_counter=0;
         for(int i =0; i < the_eq_parts.length;i++){
@@ -64,8 +86,8 @@ public class index {
         }
     }
     public static String partial_solver(String partial_eq[]){
-        int i1 = Integer.valueOf(partial_eq[0]);
-        int i2 = Integer.valueOf(partial_eq[2]);
+        int i1 = Integer.parseInt(partial_eq[0]);
+        int i2 = Integer.parseInt(partial_eq[2]);
         int out_put = 0;
         if(partial_eq[1].equals("/")){
             out_put = i1 / i2;
@@ -97,7 +119,6 @@ public class index {
                 a++;
                 j++;
             }else{
-                
                 boolean d = true;
                 while(d && j <eq.length()){
                     if(eq.charAt(j) == '+' || eq.charAt(j) == '-' || eq.charAt(j) == 'x' || eq.charAt(j) == '/'){
